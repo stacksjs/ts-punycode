@@ -286,18 +286,6 @@ describe('punycode.ucs2.decode', () => {
       expect(punycode.ucs2.decode(object.encoded)).toEqual(object.decoded)
     })
   }
-
-  it('throws RangeError: Illegal input >= 0x80 (not a basic code point)', () => {
-    expect(() => {
-      punycode.decode('\x81-')
-    }).toThrow('Illegal input >= 0x80 (not a basic code point)')
-  })
-
-  it('throws RangeError: Invalid input for non-basic code point without delimiter', () => {
-    expect(() => {
-      punycode.decode('\x81')
-    }).toThrow('Invalid input')
-  })
 })
 
 describe('punycode.ucs2.encode', () => {
@@ -331,6 +319,24 @@ describe('punycode.decode', () => {
       punycode.decode('ls8h=')
     }).toThrow('Invalid input')
   })
+
+  it('throws RangeError: Illegal input >= 0x80 (not a basic code point)', () => {
+    expect(() => {
+      punycode.decode('\x81-')
+    }).toThrow('Illegal input >= 0x80 (not a basic code point)')
+  })
+
+  it('throws RangeError: Invalid input for non-basic code point without delimiter', () => {
+    expect(() => {
+      punycode.decode('\x81')
+    }).toThrow('Invalid input')
+  })
+
+  it('throws RangeError: Overflow for input needing wider integers', () => {
+    expect(() => {
+      punycode.decode('bb000000')
+    }).toThrow('Overflow: input needs wider integers to process')
+  })
 })
 
 describe('punycode.encode', () => {
@@ -349,7 +355,7 @@ describe('punycode.toUnicode', () => {
   }
 
   for (const object of testData.strings) {
-    it('does not convert names (or other strings) that don\'t start with `xn--`', () => {
+    it(`does not convert non-xn-- strings: ${object.description || object.encoded}`, () => {
       expect(punycode.toUnicode(object.encoded)).toBe(object.encoded)
       expect(punycode.toUnicode(object.decoded)).toBe(object.decoded)
     })
@@ -364,13 +370,13 @@ describe('punycode.toASCII', () => {
   }
 
   for (const object of testData.strings) {
-    it('does not convert domain names (or other strings) that are already in ASCII', () => {
+    it(`does not convert ASCII-only strings: ${object.description || object.encoded}`, () => {
       expect(punycode.toASCII(object.encoded)).toBe(object.encoded)
     })
   }
 
   for (const object of testData.separators) {
-    it('supports IDNA2003 separators for backwards compatibility', () => {
+    it(`supports IDNA2003 separators: ${object.description}`, () => {
       expect(punycode.toASCII(object.decoded)).toBe(object.encoded)
     })
   }
