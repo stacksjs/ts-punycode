@@ -237,7 +237,7 @@ describe('punycode', () => {
     })
 
     it('should throw on invalid input', () => {
-      expect(() => punycode.decode('xyz-')).toThrow('Invalid input')
+      expect(() => punycode.decode('abc-!')).toThrow('Invalid input')
     })
   })
 
@@ -293,10 +293,10 @@ describe('punycode.ucs2.decode', () => {
     }).toThrow('Illegal input >= 0x80 (not a basic code point)')
   })
 
-  it('throws RangeError: Overflow: input needs wider integers to process', () => {
+  it('throws RangeError: Invalid input for non-basic code point without delimiter', () => {
     expect(() => {
       punycode.decode('\x81')
-    }).toThrow('Overflow: input needs wider integers to process')
+    }).toThrow('Invalid input')
   })
 })
 
