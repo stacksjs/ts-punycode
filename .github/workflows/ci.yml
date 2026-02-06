@@ -35,7 +35,7 @@ jobs:
         run: bun install
 
       - name: Lint
-        run: echo "Linting temporarily disabled while we migrate to Pickier..."
+        run: bun run lint
 
   typecheck:
     runs-on: ubuntu-latest
