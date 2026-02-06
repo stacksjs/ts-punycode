@@ -1,7 +1,7 @@
 {
   "name": "ts-punycode",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A modern TypeScript implementation of Punycode (RFC 3492) with full RFC 5891 support.",
   "author": "Chris Breuer <chris@stacksjs.org>",
   "license": "MIT",
