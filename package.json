@@ -52,7 +52,7 @@
     "typecheck": "bun --bun tsc --noEmit"
   },
   "devDependencies": {
-    "@stacksjs/clarity": "^0.3.23",
+    "@stacksjs/clarity": "^0.3.24",
     "better-dx": "^0.2.5"
   },
   "git-hooks": {
