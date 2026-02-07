@@ -38,8 +38,10 @@
     "fresh": "bunx rimraf node_modules/ bun.lock && bun i",
     "prepublishOnly": "bun --bun run build",
     "test": "bun test",
-    "lint": "bunx --bun eslint .",
-    "lint:fix": "bunx --bun eslint . --fix",
+    "lint": "bunx --bun pickier run . --mode lint --config pickier.config.ts",
+    "lint:fix": "bunx --bun pickier run . --mode lint --fix --config pickier.config.ts",
+    "format": "bunx --bun pickier run . --mode format --write --config pickier.config.ts",
+    "format:check": "bunx --bun pickier run . --mode format --check --config pickier.config.ts",
     "changelog": "bunx logsmith --verbose",
     "changelog:generate": "bunx logsmith --output CHANGELOG.md",
     "release": "bun run changelog:generate && bunx bumpx prompt --recursive",
@@ -50,13 +52,13 @@
     "typecheck": "bun --bun tsc --noEmit"
   },
   "devDependencies": {
-    "better-dx": "^0.2.5",
-    "@stacksjs/clarity": "^0.3.23"
+    "@stacksjs/clarity": "^0.3.23",
+    "better-dx": "^0.2.5"
   },
   "git-hooks": {
     "pre-commit": {
       "staged-lint": {
-        "*.{js,ts,json,yaml,yml,md}": "bunx --bun eslint --fix"
+        "*.{js,ts,json,yaml,yml,md}": "bunx --bun pickier run --mode lint --fix --config pickier.config.ts"
       }
     },
     "commit-msg": "bunx gitlint --edit .git/COMMIT_EDITMSG"
