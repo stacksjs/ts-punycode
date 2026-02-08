@@ -4,7 +4,7 @@
 
 > A TypeScript Starter Kit that will help you bootstrap your next project without minimal opinion.
 
-# bun-ts-starter
+## bun-ts-starter
 
 This is an opinionated TypeScript Starter kit to help kick-start development of your next Bun package.
 
@@ -13,7 +13,7 @@ This is an opinionated TypeScript Starter kit to help kick-start development of 
 It's rather simple to get your package development started:
 
 ```bash
-# you may use this GitHub template or the following command:
+# you may use this GitHub template or the following command
 bunx degit stacksjs/ts-starter my-pkg
 cd my-pkg
 
@@ -89,5 +89,5 @@ Made with 💙
 
 <!-- Badges -->
 
-<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/stacksjs/rpx/main?style=flat-square
-[codecov-href]: https://codecov.io/gh/stacksjs/rpx -->
+<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/stacksjs/rpx/main?style=flat-square -->
+<!-- [codecov-href]: https://codecov.io/gh/stacksjs/rpx -->
