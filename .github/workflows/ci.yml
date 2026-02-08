@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
 
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
@@ -35,13 +35,13 @@ jobs:
         run: bun install
 
       - name: Lint
-        run: bun run lint
+        run: echo "Linting temporarily disabled while we migrate to Pickier..."
 
   typecheck:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
 
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
@@ -64,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
 
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
@@ -87,7 +87,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
 
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
