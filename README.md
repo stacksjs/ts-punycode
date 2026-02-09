@@ -77,23 +77,29 @@ console.log(punycode.version) // Returns current version
 ### Main Methods
 
 - **`encode(input: string): string`**
+
   Converts a string of Unicode symbols to a Punycode string of ASCII-only symbols.
 
 - **`decode(input: string): string`**
+
   Converts a Punycode string of ASCII-only symbols to a string of Unicode symbols.
 
 - **`toASCII(input: string): string`**
+
   Converts a Unicode string representing a domain name or email address to Punycode.
 
 - **`toUnicode(input: string): string`**
+
   Converts a Punycode string representing a domain name or email address to Unicode.
 
 ### UCS-2 Utilities
 
 - **`ucs2.decode(string: string): number[]`**
+
   Creates an array containing the numeric code points of each Unicode character.
 
 - **`ucs2.encode(codePoints: number[]): string`**
+
   Creates a string based on an array of numeric code points.
 
 ## Error Handling

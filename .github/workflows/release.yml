@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -29,10 +29,13 @@ jobs:
       - name: Install Dependencies
         run: bun install
 
+      - name: Setup Pantry
+        uses: home-lang/pantry-setup@v1
+
       - name: Publish to npm
-        run: bun publish --access public
+        run: pantry npm:publish --access public
         env:
-          BUN_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: Create GitHub release
         run: bunx changelogithub
