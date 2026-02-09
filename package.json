@@ -1,7 +1,7 @@
 {
   "name": "ts-punycode",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A modern TypeScript implementation of Punycode (RFC 3492) with full RFC 5891 support.",
   "author": "Chris Breuer <chris@stacksjs.org>",
   "license": "MIT",
@@ -32,7 +32,10 @@
   },
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["README.md", "dist"],
+  "files": [
+    "README.md",
+    "dist"
+  ],
   "scripts": {
     "build": "bun --bun build.ts",
     "fresh": "bunx rimraf node_modules/ bun.lock && bun i",
@@ -42,9 +45,9 @@
     "lint:fix": "bunx --bun pickier run . --mode lint --fix --config pickier.config.ts",
     "format": "bunx --bun pickier run . --mode format --write --config pickier.config.ts",
     "format:check": "bunx --bun pickier run . --mode format --check --config pickier.config.ts",
-    "changelog": "bunx logsmith --verbose",
-    "changelog:generate": "bunx logsmith --output CHANGELOG.md",
-    "release": "bun run changelog:generate && bunx bumpx prompt --recursive",
+    "changelog": "bunx --bun logsmith --verbose",
+    "changelog:generate": "bunx --bun logsmith --output CHANGELOG.md",
+    "release": "bun run changelog:generate && bunx --bun bumpx prompt --recursive",
     "postinstall": "bunx git-hooks",
     "dev:docs": "bun --bun vitepress dev docs",
     "build:docs": "bun --bun vitepress build docs",
