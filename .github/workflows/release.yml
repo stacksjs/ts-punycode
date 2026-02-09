@@ -29,10 +29,13 @@ jobs:
       - name: Install Dependencies
         run: bun install
 
+      - name: Setup Pantry
+        uses: home-lang/pantry-setup@v1
+
       - name: Publish to npm
-        run: bun publish --access public
+        run: pantry npm:publish --access public
         env:
-          BUN_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: Create GitHub release
         run: bunx changelogithub
