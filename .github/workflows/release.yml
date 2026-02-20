@@ -36,7 +36,7 @@ jobs:
         uses: home-lang/pantry-setup@v1
 
       - name: Publish to npm
-        run: pantry npm:publish --access public
+        run: pantry publish --npm --access public
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
