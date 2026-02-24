@@ -1,11 +1,12 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "ts-punycode",
       "devDependencies": {
         "@stacksjs/clarity": "^0.3.24",
-        "better-dx": "^0.2.5",
+        "better-dx": "^0.2.6",
       },
     },
   },
