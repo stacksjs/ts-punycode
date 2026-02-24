@@ -15,7 +15,7 @@ export const PUNYCODE_ERRORS: Record<PunycodeErrorType, string> = {
 /**
  * A callback function type for array mapping operations
  */
-export type MapCallback<T, R> = (value: T, index: number, array: T[]) => R
+export type MapCallback<T, R> = (_value: T, _index: number, _array: T[]) => R
 
 /**
  * A callback function type for domain mapping operations
