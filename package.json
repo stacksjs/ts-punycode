@@ -56,7 +56,7 @@
   },
   "devDependencies": {
     "@stacksjs/clarity": "^0.3.24",
-    "better-dx": "^0.2.5"
+    "better-dx": "^0.2.6"
   },
   "git-hooks": {
     "pre-commit": {
