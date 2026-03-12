@@ -33,7 +33,7 @@ jobs:
         run: bun install
 
       - name: Setup Pantry
-        uses: home-lang/pantry-setup@v1
+        uses: home-lang/pantry/packages/action@main
 
       - name: Publish to npm
         run: pantry publish --npm --access public
