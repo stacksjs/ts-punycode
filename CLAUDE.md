@@ -2,7 +2,7 @@
 
 ## About
 
-A modern TypeScript implementation of Punycode (RFC 3492) with full RFC 5891 support.
+ts-punycode is a modern, zero-dependency TypeScript implementation of Punycode (RFC 3492) with full RFC 5891 support and Unicode 15.1 compatibility. It provides bidirectional conversion between Unicode and ASCII for domain names and email addresses via `encode`/`decode`, `toASCII`/`toUnicode`, and UCS-2 utility methods. The library is fully type-safe and self-contained.
 
 ## Linting
 
