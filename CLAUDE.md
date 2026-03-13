@@ -1,5 +1,9 @@
 # Claude Code Guidelines
 
+## About
+
+A modern TypeScript implementation of Punycode (RFC 3492) with full RFC 5891 support.
+
 ## Linting
 
 - Use **pickier** for linting — never use eslint directly
@@ -9,7 +13,7 @@
 ## Frontend
 
 - Use **stx** for templating — never write vanilla JS (`var`, `document.*`, `window.*`) in stx templates
-- Use **crosswind** as the default CSS framework
+- Use **crosswind** as the default CSS framework which enables standard Tailwind-like utility classes
 - stx `<script>` tags should only contain stx-compatible code (signals, composables, directives)
 
 ## Dependencies
