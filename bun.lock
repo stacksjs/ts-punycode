@@ -5,7 +5,7 @@
     "": {
       "name": "ts-punycode",
       "devDependencies": {
-        "@stacksjs/clarity": "^0.3.24",
+        "@stacksjs/clarity": "^0.3.28",
         "better-dx": "^0.2.15",
       },
     },
